@@ -11,10 +11,20 @@ PASSWORD = "Chafikdev23"
 
 # URLs
 BASE_URL = "http://localhost:3000"
-ADMIN_URL = f"{BASE_URL}/admin"
+DASHBOARD_URL = f"{BASE_URL}/admin"
 LOGIN_URL = f"{BASE_URL}/admin/login"
 PRODUCTS_URL = f"{BASE_URL}/admin/products"
 NEW_PRODUCT_URL = f"{BASE_URL}/admin/products/new"
+CATEGORIES_URL = f"{BASE_URL}/admin/categories"
+COLLECTIONS_URL = f"{BASE_URL}/admin/collections"
+ATTRIBUTES_URL = f"{BASE_URL}/admin/attributes"
+ORDERS_URL = f"{BASE_URL}/admin/orders"
+CUSTOMERS_URL = f"{BASE_URL}/admin/customers"
+COUPONS_URL = f"{BASE_URL}/admin/coupons"
+NEW_COUPON_URL = f"{BASE_URL}/admin/coupon/new"
+PAGES_URL = f"{BASE_URL}/admin/pages"
+WIDGETS_URL = f"{BASE_URL}/admin/widgets"
+SETTINGS_URL = f"{BASE_URL}/admin/setting/store"
 
 # Test Data
 TEST_IMAGE_PATH = os.path.join(os.path.dirname(__file__), "test_image.jpg")
@@ -71,6 +81,15 @@ DESCRIPTION_INPUT = "input#description"
 
 # Wait times
 WAIT_TIME = 2  # seconds to wait between actions
+
+# Navbar Selectors
+NAVBAR = "div.admin-navigation"
+NAV_ITEMS = "li.nav-item a"
+ROOT_NAV_ITEMS = "li.root-nav-item"
+ROOT_LABELS = "div.root-label span"
+
+# Page Title Selectors
+PAGE_TITLE = "h1.page-heading-title"
 
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""

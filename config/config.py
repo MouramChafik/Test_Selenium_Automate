@@ -1,19 +1,19 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 import os
 
 # Login credentials
-EMAIL = "admin@example.com"
-PASSWORD = "admin123"
+EMAIL = "chafikdev23@gmail.com"
+PASSWORD = "Chafikdev23"
 
 # URLs
 BASE_URL = "http://localhost:3000"
 ADMIN_URL = f"{BASE_URL}/admin"
-LOGIN_URL = "http://localhost:3000/admin"
-PRODUCTS_URL = "http://localhost:3000/admin/products"
+LOGIN_URL = f"{BASE_URL}/admin/login"
+PRODUCTS_URL = f"{BASE_URL}/admin/products"
 NEW_PRODUCT_URL = f"{BASE_URL}/admin/products/new"
 
 # Test Data
@@ -22,8 +22,8 @@ TEST_IMAGE_PATH = os.path.join(os.path.dirname(__file__), "test_image.jpg")
 # Login Selectors
 EMAIL_INPUT = "input[name='email']"
 PASSWORD_INPUT = "input[name='password']"
-SUBMIT_BUTTON = "button[type='submit']"
-ERROR_MESSAGE = ".error-message"
+SUBMIT_BUTTON = "button.button.primary"
+ERROR_MESSAGE = "div.text-critical"
 DASHBOARD_TITLE = "h1.page-heading-title"
 
 # Navigation Selectors
@@ -44,7 +44,7 @@ PRODUCT_URL_KEY = "input[name='url_key']"
 PRODUCT_META_TITLE = "input[name='meta_title']"
 PRODUCT_META_KEYWORDS = "input[name='meta_keywords']"
 PRODUCT_META_DESCRIPTION = "textarea[name='meta_description']"
-PRODUCT_STATUS_ENABLED = "input[name='status'][value='enabled']"
+PRODUCT_STATUS_ENABLED = "input[name='status'][value='1']"
 PRODUCT_VISIBILITY_VISIBLE = "input[name='visibility'][value='1']"
 PRODUCT_MANAGE_STOCK = "input[name='manage_stock'][value='1']"
 PRODUCT_STOCK_AVAILABILITY = "input[name='stock_availability'][value='1']"
@@ -63,7 +63,7 @@ IMAGE_PREVIEW = "div.image-list div.img img"
 IMAGE_UPLOADER = "div.uploader"
 
 # Wait times
-WAIT_TIME = 1  # seconds
+WAIT_TIME = 1  # seconds to wait between actions
 
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
