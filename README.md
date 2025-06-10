@@ -1,144 +1,111 @@
-# Tests Automatisés pour l'Interface d'Administration
+# Selenium Test Automation Project
 
-Ce projet contient des tests automatisés pour l'interface d'administration d'une application e-commerce, utilisant Selenium WebDriver et pytest.
+This project contains automated tests for a web application using Selenium WebDriver and pytest.
 
-## Prérequis
+## Project Structure
 
-- Python 3.13 ou supérieur
-- Chrome Browser
-- pip (gestionnaire de paquets Python)
+```
+test-ia/
+├── tests/                  # Test files
+│   ├── __init__.py
+│   ├── test_login.py      # Login tests
+│   └── test_product.py    # Product management tests
+├── config/                 # Configuration files
+│   ├── __init__.py
+│   └── config.py          # Test configuration and selectors
+├── utils/                  # Utility functions
+│   ├── __init__.py
+│   └── helpers.py         # Helper functions for tests
+├── data/                   # Test data
+│   └── test_image.jpg     # Test image for product upload
+├── .gitignore             # Git ignore file
+├── requirements.txt       # Python dependencies
+└── README.md             # Project documentation
+```
+
+## Prerequisites
+
+- Python 3.8 or higher
+- Chrome browser installed
+- Virtual environment (recommended)
 
 ## Installation
 
-1. Cloner le repository :
+1. Clone the repository:
 ```bash
-git clone [URL_DU_REPO]
-cd [NOM_DU_DOSSIER]
+git clone <repository-url>
+cd test-ia
 ```
 
-2. Installer les dépendances :
+2. Create and activate a virtual environment:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Structure du Projet
-
-```
-.
-├── README.md
-├── requirements.txt
-├── config.py                 # Configuration et sélecteurs
-├── test_test_login_admin.py  # Tests de connexion
-└── test_test_add_product.py  # Tests d'ajout de produit
-```
-
 ## Configuration
 
-Le fichier `config.py` contient :
-- Les URLs de l'application
-- Les identifiants de connexion
-- Les sélecteurs CSS pour les éléments de l'interface
-- Les temps d'attente
-- La configuration du WebDriver
+The `config/config.py` file contains all the necessary configuration:
+- URLs
+- Selectors
+- Credentials
+- Wait times
 
-## Tests Disponibles
+Update these values according to your environment.
 
-### 1. Tests de Connexion (`test_test_login_admin.py`)
+## Running Tests
 
-Teste les scénarios de connexion :
-- Connexion réussie avec des identifiants valides
-- Tentative de connexion avec des identifiants invalides
-
-### 2. Tests d'Ajout de Produit (`test_test_add_product.py`)
-
-Teste le processus complet d'ajout d'un produit :
-- Connexion à l'admin
-- Navigation vers la page d'ajout de produit
-- Remplissage des informations de base :
-  - Nom du produit
-  - SKU (unique, généré dynamiquement)
-  - Prix
-  - Poids
-- Upload d'image
-- Sélection de catégorie
-- Configuration des informations SEO :
-  - URL key
-  - Meta title
-  - Meta keywords
-  - Meta description
-- Configuration du statut et de la visibilité
-- Configuration de l'inventaire
-- Configuration des attributs
-- Sauvegarde et vérification
-
-## Exécution des Tests
-
-Pour exécuter tous les tests :
+To run all tests:
 ```bash
 pytest -v
 ```
 
-Pour exécuter un test spécifique :
+To run specific test files:
 ```bash
-pytest test_test_login_admin.py -v
-pytest test_test_add_product.py -v
+pytest tests/test_login.py -v
+pytest tests/test_product.py -v
 ```
 
-## Temps d'Exécution
+## Test Structure
 
-- Test de connexion : ~12 secondes
-- Test d'ajout de produit : ~81 secondes
+### Login Tests (`test_login.py`)
+- Test successful login with valid credentials
+- Test login with invalid credentials
 
-## Fonctionnalités Spéciales
+### Product Tests (`test_product.py`)
+- Test adding a new product
+- Test product image upload
+- Test category selection
 
-1. **Gestion des Attentes**
-   - Utilisation de `WebDriverWait` pour les éléments dynamiques
-   - Délais configurables entre les actions
+## Helper Functions
 
-2. **Upload d'Images**
-   - Gestion automatique de l'upload d'images
-   - Vérification de l'aperçu
-   - Utilisation d'une image de test
+The `utils/helpers.py` file contains reusable functions:
+- `wait_and_click`: Wait for element and click it
+- `wait_and_send_keys`: Wait for element and send keys
+- `wait_for_element`: Wait for element to be present
+- `click_radio_button`: Click radio buttons using ActionChains
+- `upload_image`: Upload and verify image
 
-3. **Génération de SKU Unique**
-   - Création de SKU uniques basés sur le timestamp
-   - Évite les conflits lors de tests multiples
+## Best Practices
 
-4. **Gestion des Catégories**
-   - Sélection de catégorie via une modale
-   - Recherche de catégorie
-   - Fermeture automatique de la modale
+1. Always use explicit waits instead of implicit waits
+2. Use helper functions for common operations
+3. Keep selectors in the config file
+4. Use meaningful test names and descriptions
+5. Clean up resources in fixtures
 
-## Bonnes Pratiques Implémentées
+## Contributing
 
-1. **Fixtures Pytest**
-   - Gestion automatique du WebDriver
-   - Nettoyage des ressources après les tests
+1. Create a new branch for your feature
+2. Write tests for new functionality
+3. Update documentation as needed
+4. Submit a pull request
 
-2. **Gestion des Erreurs**
-   - Messages d'erreur détaillés
-   - Logs de débogage
-   - Tentatives de récupération
+## License
 
-3. **Sélecteurs Robustes**
-   - Utilisation de sélecteurs CSS stables
-   - Attentes explicites pour les éléments dynamiques
-
-4. **Modularité**
-   - Fonctions helper réutilisables
-   - Configuration centralisée
-   - Tests indépendants
-
-## Développement Futur
-
-Scénarios de test à ajouter :
-- [ ] Test avec champs obligatoires manquants
-- [ ] Test avec image invalide
-- [ ] Test avec valeurs limites
-- [ ] Test de suppression d'image
-- [ ] Test de modification de produit
-- [ ] Test de suppression de produit
-
-## Support
-
-Pour toute question ou problème, veuillez créer une issue dans le repository. 
+This project is licensed under the MIT License - see the LICENSE file for details. 
