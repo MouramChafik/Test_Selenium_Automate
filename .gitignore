@@ -21,18 +21,24 @@ wheels/
 *.egg
 
 # Virtual Environment
-venv/
-env/
-ENV/
 .env
 .venv
+venv/
+ENV/
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
 
 # Testing
 .pytest_cache/
@@ -43,11 +49,6 @@ htmlcov/
 coverage.xml
 *.cover
 .hypothesis/
-
-# Logs
-*.log
-logs/
-log/
 
 # Local development
 .env.local
