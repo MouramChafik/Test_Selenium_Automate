@@ -104,6 +104,19 @@ SALES_STATS_CHART_PIE = "g.recharts-layer.recharts-pie"
 SALES_STATS_CHART_SECTORS = "path.recharts-sector"
 SALES_STATS_CHART_LABELS = "text.recharts-text.recharts-pie-label-text"
 
+# Admin Navigation
+ADMIN_NAVIGATION = "div.admin-navigation"
+CATEGORIES_LINK = "a[href*='/admin/categories']"
+NEW_CATEGORY_BUTTON = "a[href*='/admin/categories/new']"
+
+# Category Form
+CATEGORY_NAME_INPUT = "input[name='name']"
+CATEGORY_DESCRIPTION_INPUT = "textarea[name='description']"
+CATEGORY_SUBMIT_BUTTON = "button[type='submit']"
+
+# URLs
+NEW_CATEGORY_URL = f"{BASE_URL}/admin/categories/new"
+
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
     chrome_options = Options()
