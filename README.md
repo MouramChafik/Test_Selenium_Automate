@@ -71,6 +71,26 @@ Teste le processus complet d'ajout d'un produit :
 - Configuration des attributs
 - Sauvegarde et vérification
 
+### 3. Tests d'ajout de catégorie
+
+Le test `test_test_add_category_form.py` vérifie le processus complet d'ajout d'une catégorie dans l'interface d'administration :
+
+1. Connexion à l'interface d'administration
+2. Navigation vers la page des catégories
+3. Création d'une nouvelle catégorie avec :
+   - Nom de la catégorie
+   - Sélection d'une catégorie parente
+   - URL key unique
+   - Meta title, keywords et description
+   - Upload d'une image
+   - Vérification des boutons radio (status, include in nav, show products)
+4. Sauvegarde de la catégorie et vérification du message de succès
+
+Pour exécuter le test :
+```bash
+pytest tests/test_test_add_category_form.py -v
+```
+
 ## Exécution des Tests
 
 Pour exécuter tous les tests :
