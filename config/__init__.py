@@ -109,10 +109,22 @@ ADMIN_NAVIGATION = "div.admin-navigation"
 CATEGORIES_LINK = "a[href*='/admin/categories']"
 NEW_CATEGORY_BUTTON = "a[href*='/admin/categories/new']"
 
-# Category Form
+# Category Form Elements
 CATEGORY_NAME_INPUT = "input[name='name']"
-CATEGORY_DESCRIPTION_INPUT = "textarea[name='description']"
-CATEGORY_SUBMIT_BUTTON = "button[type='submit']"
+CATEGORY_SELECT_BUTTON = "a.text-interactive"
+CATEGORY_TREE = "ul.category-tree"
+CATEGORY_TREE_ITEMS = "ul.category-tree li"
+CATEGORY_TEMPLATES = "div.row-templates"
+CATEGORY_URL_KEY = "input[name='url_key']"
+CATEGORY_META_TITLE = "input[name='meta_title']"
+CATEGORY_META_KEYWORDS = "input[name='meta_keywords']"
+CATEGORY_META_DESCRIPTION = "textarea[name='meta_description']"
+CATEGORY_ADD_IMAGE = "button.button.default"
+CATEGORY_STATUS_ENABLED = "input[name='status'][value='1']"
+CATEGORY_INCLUDE_IN_NAV = "input[name='include_in_nav'][value='1']"
+CATEGORY_SHOW_PRODUCTS = "input[name='show_products'][value='1']"
+CATEGORY_CANCEL_BUTTON = "button.button.critical.outline"
+CATEGORY_SAVE_BUTTON = "button.button.primary"
 
 # URLs
 NEW_CATEGORY_URL = f"{BASE_URL}/admin/categories/new"
