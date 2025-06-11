@@ -91,6 +91,19 @@ ROOT_LABELS = "div.root-label span"
 # Page Title Selectors
 PAGE_TITLE = "h1.page-heading-title"
 
+# Dashboard Statistics Selectors
+SALES_STATS_CARD = "div.card.shadow"
+SALES_STATS_TITLE = "h2.card-title"
+SALES_STATS_PERIODS = "div.card-action a.text-interactive"
+SALES_STATS_CHART = "div.recharts-responsive-container"
+SALES_STATS_CHART_SVG = "svg.recharts-surface"
+SALES_STATS_CHART_AREA = "path.recharts-curve.recharts-area-area"
+SALES_STATS_CHART_LINE = "path.recharts-curve.recharts-area-curve"
+SALES_STATS_CHART_TOOLTIP = "div.recharts-tooltip-wrapper"
+SALES_STATS_CHART_PIE = "g.recharts-layer.recharts-pie"
+SALES_STATS_CHART_SECTORS = "path.recharts-sector"
+SALES_STATS_CHART_LABELS = "text.recharts-text.recharts-pie-label-text"
+
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
     chrome_options = Options()
