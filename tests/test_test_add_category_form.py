@@ -126,7 +126,8 @@ def test_add_category_form(driver):
     url_key = driver.find_element(By.CSS_SELECTOR, CATEGORY_URL_KEY)
     url_key.clear()
     time.sleep(WAIT_TIME)
-    url_key.send_keys("test-category")
+    unique_url = f"test-category-{int(time.time())}"
+    url_key.send_keys(unique_url)
     
     # Fill Meta Title
     print("Filling meta title")
@@ -172,8 +173,9 @@ def test_add_category_form(driver):
     save_btn = driver.find_element(By.CSS_SELECTOR, CATEGORY_SAVE_BUTTON)
     save_btn.click()
     
-    # Wait for redirect back to categories page
-    WebDriverWait(driver, 10).until(
-        EC.url_to_be(CATEGORIES_URL)
+    # Wait for success toast
+    success_toast = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "div.Toastify__toast--success"))
     )
+    assert "Category saved successfully!" in success_toast.text, "Success toast should be displayed"
     print("Category saved successfully!")
