@@ -129,6 +129,10 @@ CATEGORY_SAVE_BUTTON = "button.button.primary"
 # URLs
 NEW_CATEGORY_URL = f"{BASE_URL}/admin/categories/new"
 
+# Orders Navigation
+ORDERS_LINK = "a[href*='/admin/orders']"
+ORDERS_TITLE = "h1.page-heading-title"
+
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
     chrome_options = Options()
