@@ -142,6 +142,22 @@ ORDER_EDIT_TITLE = "h1.page-heading-title"
 ORDER_COMPLETED_BADGE = "span.success.badge span.self-center.title"
 ORDER_BACK_BUTTON = "a.breadcrum-icon"
 
+# Shopping selectors
+FEATURED_PRODUCTS_TITLE = "h3.mt-12.mb-12.text-center.uppercase.h5.tracking-widest"
+PRODUCTS_GRID = "div.grid.grid-cols-2.md\\:grid-cols-4.gap-8"
+PRODUCT_LINK = "div.product-name.product-list-name.mt-4.mb-1 a"
+ADD_TO_CART_BUTTON = "button.button.primary.outline"
+MINI_CART_TOAST = "div.toast-mini-cart"
+MINI_CART_TITLE = "div.top-head.grid.grid-cols-2 div.self-center"
+MINI_CART_ITEM_NAME = "div.item-info div.name span.font-bold"
+MINI_CART_ITEM_QTY = "div.item-info div:nth-child(2)"
+VIEW_CART_BUTTON = "a.add-cart-popup-button"
+CONTINUE_SHOPPING_LINK = "a.add-cart-popup-continue"
+
+# URLs
+HOME_URL = "http://localhost:3000/"
+CART_URL = "http://localhost:3000/cart"
+
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
     chrome_options = Options()
