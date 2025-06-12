@@ -133,6 +133,15 @@ NEW_CATEGORY_URL = f"{BASE_URL}/admin/categories/new"
 ORDERS_LINK = "a[href*='/admin/orders']"
 ORDERS_TITLE = "h1.page-heading-title"
 
+# Orders Table and Status
+ORDERS_TABLE = "table.listing.sticky"
+ORDER_DELIVERED = "span.success.badge span.self-center.title"
+ORDER_PAID = "span.success.badge span.self-center.title"
+ORDER_NUMBER_LINK = "a.hover\\:underline.font-semibold"
+ORDER_EDIT_TITLE = "h1.page-heading-title"
+ORDER_COMPLETED_BADGE = "span.success.badge span.self-center.title"
+ORDER_BACK_BUTTON = "a.breadcrum-icon"
+
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
     chrome_options = Options()
