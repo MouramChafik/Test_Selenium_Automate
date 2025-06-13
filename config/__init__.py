@@ -191,6 +191,13 @@ PRODUCT_DESCRIPTION_INPUT = "textarea[name='description']"
 PRODUCT_STATUS_RADIO = "input[name='status'][value='1']"
 PRODUCT_SAVE_BUTTON = "button.button.primary"
 
+# Product deletion selectors
+PRODUCT_CHECKBOX = "input[type='checkbox']"
+PRODUCT_SELECTED_COUNT = "a.font-semibold:first-child"
+PRODUCT_DELETE_BUTTON = "a.font-semibold:nth-child(4)"
+DELETE_CONFIRM_BUTTON = "button.button.critical"
+DELETE_CANCEL_BUTTON = "button.button.primary"
+
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
     chrome_options = Options()
