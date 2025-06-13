@@ -198,6 +198,20 @@ PRODUCT_DELETE_BUTTON = "a.font-semibold:nth-child(4)"
 DELETE_CONFIRM_BUTTON = "button.button.critical"
 DELETE_CANCEL_BUTTON = "button.button.primary"
 
+# Category Delete Selectors
+CATEGORY_TABLE = "table.listing.sticky"
+CATEGORY_ROW = "tbody > tr"
+CATEGORY_CHECKBOX_CONTAINER = "td:first-child"
+CATEGORY_CHECKBOX = "input[type='checkbox']"
+CATEGORY_SELECTED_COUNT = "a.font-semibold:first-child"
+CATEGORY_DELETE_BUTTON = "a.font-semibold:nth-child(2)"
+DELETE_MODAL = "div.modal-overlay.fadeIn"
+DELETE_MODAL_TITLE = "h2.card-title"
+DELETE_CONFIRM_BUTTON = "button.button.critical"
+DELETE_CANCEL_BUTTON = "button.button.primary"
+CATEGORY_NAME_LINK = "a.hover\\:underline.font-semibold"
+
+
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
     chrome_options = Options()
@@ -205,7 +219,7 @@ def get_driver():
     chrome_options.add_argument("--disable-notifications")
     # Remove headless mode to make browser visible
     # chrome_options.add_argument("--headless")
-    
+
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
     return driver
