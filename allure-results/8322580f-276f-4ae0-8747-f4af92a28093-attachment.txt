@@ -1,0 +1,12 @@
+Found uploader element
+Found file input element
+Uploading image from: /Users/chafik/Desktop/test-ia/config/test_image.jpg
+File path sent to input element
+Image list found
+Image preview found
+Image source is set
+Found description editor
+Found description templates
+Clicked first template
+Found rows container
+Added description text

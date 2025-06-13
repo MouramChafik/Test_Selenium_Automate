@@ -1,0 +1,16 @@
+
+Current URL: http://localhost:3000/admin
+
+Looking for admin navigation
+Admin navigation found
+
+Looking for Categories link
+Categories link found
+Navigated to categories page
+
+Looking for New Category button
+New Category button found
+Navigated to new category page
+
+Looking for name input field
+Name input field found

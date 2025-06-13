@@ -1,0 +1,6 @@
+
+Current URL: http://localhost:3000/admin
+
+Category to delete: ☕ Lifestyle du dev/testeur / Test Category Updated
+
+Category '☕ Lifestyle du dev/testeur / Test Category Updated' successfully deleted

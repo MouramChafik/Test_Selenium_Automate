@@ -111,6 +111,7 @@ NEW_CATEGORY_BUTTON = "a[href*='/admin/categories/new']"
 
 # Category Form Elements
 CATEGORY_NAME_INPUT = "input[name='name']"
+CATEGORY_SKU_INPUT = "input[name='sku']"
 CATEGORY_SELECT_BUTTON = "a.text-interactive"
 CATEGORY_TREE = "ul.category-tree"
 CATEGORY_TREE_ITEMS = "ul.category-tree li"
@@ -166,6 +167,7 @@ CATEGORY_EDIT_TITLE = "h1.page-heading-title"
 
 # Category form selectors
 CATEGORY_NAME_INPUT = "input[name='name']"
+CATEGORY_SKU_INPUT = "input[name='sku']"
 CATEGORY_URL_KEY_INPUT = "input[name='url_key']"
 CATEGORY_META_TITLE_INPUT = "input[name='meta_title']"
 CATEGORY_META_KEYWORDS_INPUT = "input[name='meta_keywords']"

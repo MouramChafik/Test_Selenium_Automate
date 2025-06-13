@@ -1,0 +1,20 @@
+
+Current URL: http://localhost:3000/admin
+Found admin nav container
+Clicked on Products link
+Navigated to products page
+Found products table
+Found Test Product
+Navigated to edit page
+Updated product name
+Updated SKU
+Updated price
+Updated quantity
+Found description editor
+Found description templates
+Clicked first template
+Found rows container
+Added description text
+Verified status radio
+Clicked save button
+Product updated successfully

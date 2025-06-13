@@ -130,3 +130,34 @@ Les tests sont organisés par fonctionnalité et suivent une nomenclature cohér
 - Les tests utilisent Selenium WebDriver pour l'automatisation des tests
 - Le projet inclut une configuration pour gérer les différents environnements de test
 - Les tests sont conçus pour être indépendants et reproductibles
+
+
+##install : pip install pytest‑html 
+      commande :
+      1-  python –m pytest ––html=report.html ––self-contained-html
+
+      ## generer le rapport TP 
+
+      2- python -m pytest tests/test_test_add_product.py tests/test_test_add_category.py tests/test_test_add_category_form.py tests/test_test_edit_product.py tests/test_test_edit_category.py tests/test_test_delete_product.py tests/test_test_delete_category.py tests/test_test_navbar_admin.py tests/test_test_shopping.py --html=report.html --self-contained-html
+
+
+## command test rapport Allure :
+      Installe :  pip install allure-pytest pytest-selenium
+                  brew install allure   # ou npm install -g allure-commandline
+
+      commande pour generer le rapport TP: 
+      
+      pytest tests/test_test_login_admin.py \
+       tests/test_test_add_category.py \
+       tests/test_test_add_category_form.py \
+       tests/test_test_edit_category.py \
+       tests/test_test_delete_category.py \
+       tests/test_test_add_product.py \
+       tests/test_test_edit_product.py \
+       tests/test_test_delete_product.py \
+       --alluredir=allure-results
+
+
+      Génère les résultats : pytest tests/ --alluredir=allure-results
+
+      Affiche le rapport : allure serve allure-results

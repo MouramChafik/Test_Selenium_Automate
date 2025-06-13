@@ -1,0 +1,14 @@
+
+Current URL: http://localhost:3000/admin
+
+Filling category form...
+Filling name
+Selecting parent category
+Filling URL key
+Filling meta title
+Filling meta keywords
+Filling meta description
+Adding image
+Verifying radio buttons
+Saving category
+Category saved successfully!

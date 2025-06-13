@@ -1,0 +1,16 @@
+
+Current URL: http://localhost:3000/admin
+Found admin navigation
+Clicked on Categories link
+Navigated to categories page
+Found categories table
+Found Test Category
+Navigated to edit page
+Updated category name
+Updated URL key
+Updated meta title
+Updated meta keywords
+Updated meta description
+Verified radio buttons
+Clicked save button
+Category updated successfully

@@ -27,8 +27,9 @@ from config import (
     CATEGORY_STATUS_RADIO,
     CATEGORY_INCLUDE_IN_NAV_RADIO,
     CATEGORY_SHOW_PRODUCTS_RADIO,
-    CATEGORY_SAVE_BUTTON
+    CATEGORY_SAVE_BUTTON,
 )
+
 
 @pytest.fixture
 def driver():
@@ -37,31 +38,31 @@ def driver():
     yield driver
     driver.quit()
 
+
 def login(driver):
     """Helper function to login"""
     driver.get(LOGIN_URL)
     time.sleep(1)
-    
+
     email_field = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, EMAIL_INPUT))
     )
     email_field.clear()
     time.sleep(1)
     email_field.send_keys(EMAIL)
-    
+
     password_field = driver.find_element(By.CSS_SELECTOR, PASSWORD_INPUT)
     password_field.clear()
     time.sleep(1)
     password_field.send_keys(PASSWORD)
-    
+
     submit_button = driver.find_element(By.CSS_SELECTOR, SUBMIT_BUTTON)
     time.sleep(1)
     submit_button.click()
-    
+
     # Wait for dashboard to load
-    WebDriverWait(driver, 10).until(
-        EC.url_to_be(DASHBOARD_URL)
-    )
+    WebDriverWait(driver, 10).until(EC.url_to_be(DASHBOARD_URL))
+
 
 def test_edit_category(driver):
     """Test editing a category"""
@@ -82,9 +83,7 @@ def test_edit_category(driver):
     print("Clicked on Categories link")
 
     # Wait for categories page to load
-    WebDriverWait(driver, 10).until(
-        EC.url_to_be(CATEGORIES_URL)
-    )
+    WebDriverWait(driver, 10).until(EC.url_to_be(CATEGORIES_URL))
     print("Navigated to categories page")
 
     # Find categories table
@@ -111,7 +110,9 @@ def test_edit_category(driver):
         EC.presence_of_element_located((By.CSS_SELECTOR, CATEGORY_EDIT_TITLE))
     )
     assert edit_title.is_displayed(), "Edit title should be visible"
-    assert "Editing Test Category" in edit_title.text, "Title should contain 'Editing Test Category'"
+    assert (
+        "Editing Test Category" in edit_title.text
+    ), "Title should contain 'Editing Test Category'"
     print("Navigated to edit page")
 
     # Edit category fields
@@ -132,12 +133,16 @@ def test_edit_category(driver):
     meta_title_input.send_keys("Updated Meta Title")
     print("Updated meta title")
 
-    meta_keywords_input = driver.find_element(By.CSS_SELECTOR, CATEGORY_META_KEYWORDS_INPUT)
+    meta_keywords_input = driver.find_element(
+        By.CSS_SELECTOR, CATEGORY_META_KEYWORDS_INPUT
+    )
     meta_keywords_input.clear()
     meta_keywords_input.send_keys("updated, meta, keywords")
     print("Updated meta keywords")
 
-    meta_description_input = driver.find_element(By.CSS_SELECTOR, CATEGORY_META_DESCRIPTION_INPUT)
+    meta_description_input = driver.find_element(
+        By.CSS_SELECTOR, CATEGORY_META_DESCRIPTION_INPUT
+    )
     meta_description_input.clear()
     meta_description_input.send_keys("Updated meta description for the category")
     print("Updated meta description")
@@ -146,10 +151,14 @@ def test_edit_category(driver):
     status_radio = driver.find_element(By.CSS_SELECTOR, CATEGORY_STATUS_RADIO)
     assert status_radio.is_selected(), "Status radio should be selected"
 
-    include_in_nav_radio = driver.find_element(By.CSS_SELECTOR, CATEGORY_INCLUDE_IN_NAV_RADIO)
+    include_in_nav_radio = driver.find_element(
+        By.CSS_SELECTOR, CATEGORY_INCLUDE_IN_NAV_RADIO
+    )
     assert include_in_nav_radio.is_selected(), "Include in nav radio should be selected"
 
-    show_products_radio = driver.find_element(By.CSS_SELECTOR, CATEGORY_SHOW_PRODUCTS_RADIO)
+    show_products_radio = driver.find_element(
+        By.CSS_SELECTOR, CATEGORY_SHOW_PRODUCTS_RADIO
+    )
     assert show_products_radio.is_selected(), "Show products radio should be selected"
     print("Verified radio buttons")
 
