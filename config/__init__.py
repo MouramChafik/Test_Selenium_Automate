@@ -175,6 +175,22 @@ CATEGORY_INCLUDE_IN_NAV_RADIO = "input[name='include_in_nav'][value='1']"
 CATEGORY_SHOW_PRODUCTS_RADIO = "input[name='show_products'][value='1']"
 CATEGORY_SAVE_BUTTON = "button.button.primary"
 
+# Product navigation selectors
+ADMIN_NAV_CONTAINER = ".admin-nav-container"
+PRODUCTS_LINK = ".admin-nav-container li.nav-item a"
+PRODUCTS_TABLE = "table.listing.sticky"
+PRODUCT_NAME_LINK = "td > div > a.hover\\:underline.font-semibold"
+PRODUCT_EDIT_TITLE = "h1.page-heading-title"
+
+# Product form selectors
+PRODUCT_NAME_INPUT = "input[name='name']"
+PRODUCT_SKU_INPUT = "input[name='sku']"
+PRODUCT_PRICE_INPUT = "input[name='price']"
+PRODUCT_STOCK_INPUT = "input[name='stock']"
+PRODUCT_DESCRIPTION_INPUT = "textarea[name='description']"
+PRODUCT_STATUS_RADIO = "input[name='status'][value='1']"
+PRODUCT_SAVE_BUTTON = "button.button.primary"
+
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
     chrome_options = Options()
