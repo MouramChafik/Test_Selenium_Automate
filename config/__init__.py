@@ -106,7 +106,7 @@ SALES_STATS_CHART_LABELS = "text.recharts-text.recharts-pie-label-text"
 
 # Admin Navigation
 ADMIN_NAVIGATION = "div.admin-navigation"
-CATEGORIES_LINK = "a[href*='/admin/categories']"
+CATEGORIES_LINK = "a[href*='categories']"
 NEW_CATEGORY_BUTTON = "a[href*='/admin/categories/new']"
 
 # Category Form Elements
@@ -121,7 +121,7 @@ CATEGORY_META_KEYWORDS = "input[name='meta_keywords']"
 CATEGORY_META_DESCRIPTION = "textarea[name='meta_description']"
 CATEGORY_ADD_IMAGE = "button.button.default"
 CATEGORY_STATUS_ENABLED = "input[name='status'][value='1']"
-CATEGORY_INCLUDE_IN_NAV = "input[name='include_in_nav'][value='1']"
+CATEGORY_INCLUDE_IN_NAV_RADIO = "input[name='include_in_nav'][value='1']"
 CATEGORY_SHOW_PRODUCTS = "input[name='show_products'][value='1']"
 CATEGORY_CANCEL_BUTTON = "button.button.critical.outline"
 CATEGORY_SAVE_BUTTON = "button.button.primary"
@@ -157,6 +157,23 @@ CONTINUE_SHOPPING_LINK = "a.add-cart-popup-continue"
 # URLs
 HOME_URL = "http://localhost:3000/"
 CART_URL = "http://localhost:3000/cart"
+
+# Category Edit selectors
+CATEGORIES_TABLE = "table.listing.sticky"
+CATEGORY_ROW = "tbody > tr"
+CATEGORY_NAME_LINK = "td > div > a.hover\\:underline.font-semibold"
+CATEGORY_EDIT_TITLE = "h1.page-heading-title"
+
+# Category form selectors
+CATEGORY_NAME_INPUT = "input[name='name']"
+CATEGORY_URL_KEY_INPUT = "input[name='url_key']"
+CATEGORY_META_TITLE_INPUT = "input[name='meta_title']"
+CATEGORY_META_KEYWORDS_INPUT = "input[name='meta_keywords']"
+CATEGORY_META_DESCRIPTION_INPUT = "textarea[name='meta_description']"
+CATEGORY_STATUS_RADIO = "input[name='status'][value='1']"
+CATEGORY_INCLUDE_IN_NAV_RADIO = "input[name='include_in_nav'][value='1']"
+CATEGORY_SHOW_PRODUCTS_RADIO = "input[name='show_products'][value='1']"
+CATEGORY_SAVE_BUTTON = "button.button.primary"
 
 def get_driver():
     """Initialize and return a Chrome WebDriver instance"""
