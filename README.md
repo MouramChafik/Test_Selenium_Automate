@@ -1,36 +1,92 @@
-# Tests Automatisés pour l'Interface d'Administration
+# Test Automation Project
 
-Ce projet contient des tests automatisés pour l'interface d'administration d'une application e-commerce, utilisant Selenium WebDriver et pytest.
-
-## Prérequis
-
-- Python 3.13 ou supérieur
-- Chrome Browser
-- pip (gestionnaire de paquets Python)
-
-## Installation
-
-1. Cloner le repository :
-```bash
-git clone [URL_DU_REPO]
-cd [NOM_DU_DOSSIER]
-```
-
-2. Installer les dépendances :
-```bash
-pip install -r requirements.txt
-```
+Ce projet contient des tests automatisés pour l'interface d'administration d'une application e-commerce.
 
 ## Structure du Projet
 
 ```
 .
-├── README.md
-├── requirements.txt
-├── config.py                 # Configuration et sélecteurs
-├── test_test_login_admin.py  # Tests de connexion
-└── test_test_add_product.py  # Tests d'ajout de produit
+├── config/
+│   └── __init__.py      # Configuration et sélecteurs
+├── tests/
+│   ├── test_test_login_admin.py
+│   ├── test_test_add_product.py
+│   ├── test_test_edit_product.py
+│   └── test_test_delete_product.py
+└── README.md
 ```
+
+## Tests Implémentés
+
+### 1. Login Admin
+- Vérifie la connexion à l'interface d'administration
+- Valide les champs de connexion et le bouton de soumission
+
+### 2. Ajout de Produit
+- Teste l'ajout d'un nouveau produit
+- Vérifie tous les champs requis (nom, SKU, prix, etc.)
+- Gère l'upload d'image et l'éditeur de description riche
+
+### 3. Édition de Produit
+- Teste la modification d'un produit existant
+- Vérifie la mise à jour des champs
+- Gère l'éditeur de description riche
+
+### 4. Suppression de Produit
+- Teste la suppression d'un produit
+- Vérifie la sélection via checkbox
+- Confirme la suppression via la modale
+- Rafraîchit la page pour vérifier la suppression
+
+## Prérequis
+
+- Python 3.13+
+- Chrome Browser
+- ChromeDriver (géré automatiquement via webdriver-manager)
+
+## Installation
+
+1. Cloner le repository
+2. Créer un environnement virtuel :
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # Sur Unix/macOS
+   # ou
+   .venv\Scripts\activate  # Sur Windows
+   ```
+3. Installer les dépendances :
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Exécution des Tests
+
+Pour exécuter tous les tests :
+```bash
+pytest
+```
+
+Pour exécuter un test spécifique :
+```bash
+pytest tests/test_test_delete_product.py -v
+```
+
+## Notes Importantes
+
+- Les tests utilisent Selenium WebDriver en mode headless
+- Les sélecteurs CSS sont centralisés dans `config/__init__.py`
+- Les tests incluent des attentes explicites pour la stabilité
+- La suppression de produit inclut un rafraîchissement de page pour vérifier la suppression
+
+## Structure des Tests
+
+Chaque test suit une structure similaire :
+1. Configuration du WebDriver
+2. Login à l'interface admin
+3. Navigation vers la section appropriée
+4. Exécution de l'action (ajout/édition/suppression)
+5. Vérification du résultat
+6. Nettoyage (fermeture du navigateur)
 
 ## Configuration
 
